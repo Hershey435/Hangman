@@ -1,7 +1,7 @@
 import hangman_art as h_art
 import requests
 from lxml import html
-from replit import clear
+#from replit import clear
 
 # request the page
 page = requests.get('https://randomword.com/')
@@ -28,6 +28,7 @@ guessed_letters = []
 for _ in range(word_length):
     display += "_"
 
+#the main game
 while not end_of_game:
     print(f"{' '.join(display)}\n \nPsst, Hint : {hint} \n")
     guess = input("Guess a letter: ").lower()
@@ -42,7 +43,7 @@ while not end_of_game:
         if letter == guess:
             display[position] = letter
             
-    clear()
+    #clear()
 
     if guess not in chosen_word:
         lives -= 1
